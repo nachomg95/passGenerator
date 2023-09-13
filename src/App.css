@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
+ body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(252, 246, 239, 0.637);
+  font-family: roboto, sans-serif;
+  height: 100%;
+  margin: 0; /* Agregado para eliminar el margen predeterminado del cuerpo */
+  margin-top: 4%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+button {
+  background-color: gray;
+  border: none;
   color: white;
+  padding: 15px 32px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.App-link {
-  color: #61dafb;
+.pass {
+  font-size: larger;
+  font-weight: bolder;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button:hover {
+  cursor: pointer;
+  background-color: #7f848a;
+}
+
+.passLength {
+  font-size: 50px;
+  text-align: center;
+  border: none;
+  border-radius: 15px;
+  width: 80%; /* Ancho del slider */
+  margin: 20px; /* Margen entre el slider y otros elementos */
+}
+
+/* Estilos específicos para la barra del slider y su pulgar con tamaño ajustado */
+.passLength::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 30px; /* Grosor de la barra del slider aumentado */
+  background-color: #ccc; /*Color de la barra del*/
+  border: none;
+  border-radius: 10px;
+}
+
+.passLength::-moz-range-track {
+  width: 100%;
+  height: 20px; /* Grosor de la barra del slider aumentado */
+  background-color: #ccc;
+  border: none;
+  border-radius: 10px;
+}
+
+.passLength::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px; /* Ancho del pulgar */
+  background-color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: scale(2,4) translateY(20%); /* Aumentar la altura verticalmente */
+  
+}
+
+.passLength::-moz-range-thumb {
+  width: 30px; /* Ancho del pulgar */
+  background-color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: scale(2,4) translateY(20%); /* Aumentar la altura verticalmente */
+}
+
+/* Estilos CSS para tablet */
+@media screen and (max-width: 768px) {
+  body {
+    margin-top: 8%; /* Cambia el margen superior para tablet */
   }
-  to {
-    transform: rotate(360deg);
+
+  .container {
+    padding: 10px; /* Espaciado interno reducido para tablet */
+  }
+
+  .passLength {
+    font-size: 40px; /* Tamaño de fuente reducido para tablet */
+    width: 90%; /* Ancho del slider ajustado para tablet */
+  }
+
+  /* Estilos específicos para el pulgar del slider en tablet */
+  .passLength::-webkit-slider-thumb,
+  .passLength::-moz-range-thumb {
+    width: 25px; /* Ancho del pulgar ajustado para tablet */
+    height: 25px; /* Altura del pulgar ajustada para tablet */
+  }
+}
+
+/* Estilos CSS para smartphone */
+@media screen and (max-width: 480px) {
+  body {
+    margin-top: 10%; /* Cambia el margen superior para smartphone */
+  }
+
+  .container {
+    padding: 5px; /* Espaciado interno reducido para smartphone */
+  }
+
+  .passLength {
+    font-size: 30px; /* Tamaño de fuente reducido para smartphone */
+    width: 100%; /* Ancho del slider ajustado para smartphone */
+  }
+
+  /* Estilos específicos para el pulgar del slider en smartphone */
+  .passLength::-webkit-slider-thumb,
+  .passLength::-moz-range-thumb {
+    width: 20px; /* Ancho del pulgar ajustado para smartphone */
+    height: 20px; /* Altura del pulgar ajustada para smartphone */
   }
 }
